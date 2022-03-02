@@ -23,6 +23,6 @@ public class HomeControllerTest {
                 .andExpect(status().isOk())  //expect HTTP 200
                 .andExpect(view().name("home")) //Expect home view
                 .andExpect(content().string(
-                        containsString("Welcome to home bakers application..."))); //expect Welcome
+                        containsString("Welcome to..."))); //expect Welcome
     }
 }
