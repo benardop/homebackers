@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--suppress XmlInvalidId -->
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+  <form method="post" th:action="@{/orders}" th:object="${order}">
+     <h1>Order your taco Creations!</h1>
+      <img th:src="@{/images/HomeBakersLogo.PNG}" />
+      <a th:href="@{/design}" id="another">Design another taco</a><br/>
+
+      <div th:if="${#fields.hasErrors()}">
+        <span class="validationError">
+          Please correct the problems below and resubmit
+        </span>
+      </div>
+
+       <h3>Deliver my taco masterpieces to...</h3>
+       <label for="name">Name:</label>
+       <input type="text" th:field="*{name}"/>
+       <br/>
+
+      <label for="street">Street Address:</label>
+      <input type="text" th:field="*{street}"/>
+      <br/>
+
+      <label for="city">City:</label>
+      <input type="text" th:field="*{city}"/>
+      <br/>
+
+      <label for="state">State:</label>
+      <input type="text" th:field="*{state}"/>
+      <br/>
+
+      <label for="zip">Zip Code:</label>
+      <input type="text" th:field="*{zip}"/>
+      <br/>
+
+      <h3>Here is how I will pay...</h3>
+      <label for="ccNumber">Credit card #:</label>
+      <input type="text" th:field="*{ccNumber}"/>
+      <br/>
+
+      <label for="ccExpiration">Expiration:</label>
+      <input type="text" th:field="*{ccExpiration}"/>
+      <br/>
+
+      <label for="ccCVV">CVV:</label>
+      <input type="text" th:field="*{ccCVV}"/>
+      <br/>
+
+      <input type="submit" value="Submit order"/>
+
+  </form>
+</body>
+</html>

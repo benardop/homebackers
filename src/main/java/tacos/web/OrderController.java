@@ -18,4 +18,10 @@ public class OrderController {
         model.addAttribute("order", new Order());
         return "orderForm";
     }
+
+    @PostMapping
+    public String processOrder(Order order) {
+        log.info("order submitted: " +  order);
+        return "redirect:/";
+    }
 }
